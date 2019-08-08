@@ -18,6 +18,6 @@ class ApplicationController < ActionController::Base
   end
 
   def set_search
-    @q= Work.search(params[:q])
+    @q= Work.where(["status = ? and process_status = ?", true, false]).search(params[:q])
   end
 end

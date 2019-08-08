@@ -1,51 +1,56 @@
+<!-- SubHeader =============================================== -->
+<section class="parallax-window" data-parallax="scroll" data-image-src="img/sub_header_2.jpg" data-natural-width="1400" data-natural-height="470">
+  <div id="subheader">
+    <div id="sub_content">
+      <div id="thumb"><%= image_tag "https://res.cloudinary.com/tuquyet/image/upload/v1565283404/pbl/sun_kdgsm4.png" %></div>
+      <h1><%= @work.title %></h1>
+      <div><i class="icon_house"></i> <strong><%= @work.company.name %></strong></div>
+    </div><!-- End sub_content -->
+  </div><!-- End subheader -->
+</section><!-- End section -->
+<!-- End SubHeader ============================================ -->
+
 <!-- Content ================================================== -->
 <div class="container margin_60_35">
   <div class="row">
-    <div class="col-md-2">
+    <div class="col-md-4">
+      <p>
+        <a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap">仕事の情報</a>
+      </p>
+      <div class="box_style_2">
+        <ul class="opening_list">
+          <li>給料<span><%= @work.salary %></span></li>
+          <li>締め切り<span><%= @work.dateline %></span></li>
+          <li>勤務地<span><%= @work.work_location %></span></li>
+          <% if @work.process_status == false %>
+            <li>・進行中</li>
+          <% else %>
+            <li>・終わった</li>
+          <% end %>
+
+          <% if @work.status == true %>
+            <li>・受けられる</li>
+          <% else %>
+            <li>・受けられない</li>
+          <% end %>
+        </ul>
+      </div>
     </div>
+
     <div class="col-md-8">
       <div class="box_style_2">
-        <h2 class="inner">仕事詳細内容</h2>
+        <h2 class="inner">仕事の内容</h2>
 
         <h3><%= @work.title %></h3>
+        <p class="add_bottom_30">
+          <%= @work.content %>
+        </p>
 
-        <div id="summary_review">
-          <div id="general_rating">
-            <%= @work.company.name %>
-          </div>
-
-          <div class="row" id="rating_summary">
-            <div class="col-md-6">
-              <ul>
-                <li>給料
-                  <span class="pull-right"><%= @work.salary %></span>
-                </li>
-              </ul>
-            </div>
-            <div class="col-md-6">
-              <ul>
-                <li>残日数
-                  <span class="pull-right"><%= @date_count.to_s + "日" %></span>
-                </li>
-                <li>勤務地
-                  <span class="pull-right"><%= @work.work_location %></span>
-                </li>
-              </ul>
-            </div>
-          </div><!-- End row -->
-          <div>
-            仕事のタグ
-          </div>
-        </div><!-- End summary_review -->
         <div id="tag_work" class="hidden"><%= @work.tag %></div>
         <div class="chips-initial">
           <input class="chipssss">
         </div>
-        <div>
-          <p>
-            <%= @work.content %>
-          </p>
-        </div>
+
         <div id="summary_review">
           <div class="row" id="rating_summary">
             <!--          <a  class="btn_1 add_bottom_15 pull-right" > <%#= link_to "応募する", apply_path %></a>-->
@@ -144,11 +149,44 @@
       <% end %>
     <% end %>
 
-<!--    <%#= link_to "完成", update_work_path , class: "btn_1 add_bottom_15" %></div>-->
+    <!--    <%#= link_to "完成", update_work_path , class: "btn_1 add_bottom_15" %></div>-->
     <%#= link_to "削除する", work_path(@work), method: :delete, class: "btn_full" %>
 
-  　　　　　
-</div><!-- End box_style_1 -->
+
+
+    <div class="review_strip_single">
+      <img src="img/avatar1.jpg" alt="" class="img-circle">
+      <small> - 10 March 2015 -</small>
+      <h4>Jhon Doe</h4>
+      <p>
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed
+        sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+      </p>
+    </div><!-- End review strip -->
+
+    <div class="review_strip_single">
+      <img src="img/avatar3.jpg" alt="" class="img-circle">
+      <small> - 25 March 2015 -</small>
+      <h4>Markus Schulz</h4>
+      <p>
+        "At sed dico invenire facilisis, sed option sapientem iudicabit ad, sea idque doming vituperatoribus at. Duo
+        ut inani tantas scaevola. Commodo oblique at cum. Duo id vide delectus. Vel et doctus laoreet minimum, ei
+        feugait pertinacia usu.
+      </p>
+    </div><!-- End review strip -->
+
+    <div class="review_strip_single last">
+      <img src="img/avatar2.jpg" alt="" class="img-circle">
+      <small> - 10 April 2015 -</small>
+      <h4>Frank Cooper</h4>
+      <p>
+        "Ne mea congue facilis eligendi, possit utamur sensibus id qui, mel tollit euismod alienum eu. Ad tollit
+        lucilius praesent per, ex probo utroque placerat eos. Tale verear efficiendi et cum, meis timeam vix et, et
+        duis debet nostro mel. Aeterno labitur per no, id nec tantas nemore. An minim molestie per, mei sumo
+        vulputate cu."
+      </p>
+    </div><!-- End review strip -->
+  </div><!-- End box_style_1 -->
 
 </div>
 </div><!-- End row -->

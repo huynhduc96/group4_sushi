@@ -23,7 +23,7 @@
             <% if logged_in_student? %>
               <li> <%= link_to "仕事の管理", works_student_path(@current_student.id) %></li>
               <li class="submenu">
-                <a href="javascript:void(0);" class="show-submenu">アカウント<i class="icon-down-open-mini"></i></a>
+                <a href="javascript:void(0);" class="show-submenu"><%= @current_student.name %><i class="icon-down-open-mini"></i></a>
                 <ul>
                   <li><%= link_to "マイページ", student_path(@current_student.id) %></li>
                   <li><%= link_to "情報の編集", edit_student_path(@current_student.id) %></li>
@@ -33,7 +33,7 @@
             <% elsif logged_in_company? %>
               <li> <%= link_to "仕事の管理", works_company_path(@current_company.id) %></li>
               <li class="submenu">
-                <a href="javascript:void(0);" class="show-submenu">アカウント<i class="icon-down-open-mini"></i></a>
+                <a href="javascript:void(0);" class="show-submenu"><%= @current_company.name %><i class="icon-down-open-mini"></i></a>
                 <ul>
                   <li><%= link_to "マイページ", company_path(@current_company.id) %></li>
                   <li><%= link_to "情報の編集", edit_company_path(@current_company.id) %></li>

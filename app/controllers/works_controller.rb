@@ -37,10 +37,10 @@ class WorksController < ApplicationController
 
   def index
     if params[:q].present?
-      @q = Work.search(params[:q])
+      @q = Work.where(["status = ? and process_status = ?", true, false]).search(params[:q])
       @works = @q.result(distinct: true).page(params[:page]).per 7
     else
-      @works = Work.all.page(params[:page]).per 7
+      @works = Work.where(["status = ? and process_status = ?", true, false]).all.page(params[:page]).per 7
     end
   end
 

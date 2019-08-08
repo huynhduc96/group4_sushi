@@ -1007,7 +1007,7 @@ a.strip_list:hover h3 {
     text-indent: -9999px;
     top: -5px;
     left: -5px;
-    background: url(../img/ribbon_popular.png) no-repeat;
+    background: url("https://res.cloudinary.com/tuquyet/image/upload/v1565248977/pbl/ribbon_popular_atuujm.png") no-repeat;
     width: 81px;
     height: 80px;
     z-index: 3

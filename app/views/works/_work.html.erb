@@ -1,12 +1,12 @@
 <div class="strip_list">
   <div class="ribbon_1">
-    type_banner
+    poplular
   </div>
   <div class="row">
     <div class="col-md-9 col-sm-9">
       <div class="desc">
         <div class="thumb_strip">
-          <a href="detail_page.html"><img src="img/thumb_restaurant.jpg" alt=""></a>
+          <%= image_tag "https://res.cloudinary.com/tuquyet/image/upload/v1565283404/pbl/sun_kdgsm4.png" %>
         </div>
         <h3><%= work.title %></h3>
         <div class="type">
@@ -19,6 +19,17 @@
           <li class="opening"><%= work.work_location %><i class="icon_pin no"></i></li>
           <li><%= work.salary %><i class="icon_currency_alt ok"></i></li>
           <li style="margin-top: 5px">締め切り：あと<%= ((work.dateline - Time.now) / 1.day).to_int %>日<i class="icon_calendar no"></i></li>
+          <% if work.process_status == false %>
+          <li style="margin-top: 5px">進行中<i class="icon_check yes"></i></li>
+          <% else %>
+            <li style="margin-top: 5px">終わった<i class="icon_close no"></i></li>
+          <% end %>
+
+          <% if work.status == true %>
+            <li style="margin-top: 5px">受けられる<i class="icon_check yes"></i></li>
+          <% else %>
+            <li style="margin-top: 5px">受けられない<i class="icon_close no"></i></li>
+          <% end %>
         </ul>
       </div>
     </div>

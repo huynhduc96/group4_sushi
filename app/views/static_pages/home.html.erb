@@ -1,4 +1,4 @@
-<% provide :title, t(".title") %>
+<% @title = "aasd" %>
 <body>
 <!--[if lte IE 8]>
 <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
@@ -57,7 +57,7 @@
         やりたい仕事がきっとみつかる！
       </p>
     </div>
-
+    <h4>給料が一番高い仕事</h4>
     <div class="row">
       <% @top_high_salary_works.each do |work| %>
         <div class="col-md-6">
@@ -65,7 +65,7 @@
         </div>
       <% end %>
     </div>
-
+    <h4>もうすぐ終わる仕事</h4>
     <% count = 0 %>
     <div class="row">
       <% @top_recent_works.each do |work| %>

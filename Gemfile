@@ -28,9 +28,9 @@ gem "sass-rails", "~> 5.0"
 gem "turbolinks", "~> 5"
 gem 'minitest-reporters'
 gem 'uglifier'
-# gem "sqlite3"
 
 group :development, :test do
+  gem "sqlite3"
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "capybara", "~> 2.13"
   gem "selenium-webdriver"
