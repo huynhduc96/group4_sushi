@@ -19,7 +19,7 @@ gem "jbuilder", "~> 2.5"
 gem "jquery-rails"
 gem 'kaminari'
 gem "mini_magick"
-gem "puma", "~> 3.7"
+gem "puma", "~> 3.12"
 gem "rails", "~> 5.1.6"
 gem "ransack"
 gem 'rails_admin'
